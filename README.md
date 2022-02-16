@@ -155,7 +155,7 @@ The table below gives a brief description of each parameter.
 |feedback_likelihood|Probability of consumer submitting feedback to the service provider|0.1|
 |dropout_threshold|Minimum trust threshold for consumer to leave the platform. This value is multiplied by the consumer' initial trust|0.8|
 
-**Note**: The simulation may take a long time based on the predefined time and iterations in the `config.yml`. To run a light simulation, choose smaller values for time and iterations.
+**Note**: The simulation may take a long time based on the predefined time and number of replications in the `config.yml`. To run a light simulation, choose smaller values for time and iterations.
 
 
 ## Results
@@ -164,17 +164,14 @@ The combination of sensitive parameters with different specified values are save
 
 We test five different scenarios while varying recommendation strategies and fixing other model variables.
 
-The following results are taken from simulating 1000 timesteps and repeat the simulation three times. The simulation comprises one service provider agent and 610 consumer agents, and consumers can share their experiences on social media.
-We observe the following:
-
+The following is part of the results generated from running the simulation for 1000 time steps and three replications. The simulation comprises one service provider agent and 610 consumer agents, and consumers can share their experiences on social media.
 
 <ul>
-<li>Consumer trust in the service provider </li>
-<li>Service provider total profit </li>
-<li>Consumption probability</li>
+<li>Consumption probability </li>
+<li>Profit per time step </li>
+<li>Cumulative profit</li>
 </ul>
 
 |Consumers trust over time|Total profit over time|Consumption probability over time|
 |------|-------|------|
-|![consumers trust](figures/time-trust.png)|![total profit](figures/time-total_profit.png)|![consumption probability](figures/time-consumption_probability.png)|
-
+|![consumers trust](figures/consumption.png)|![total profit](figures/profit-per-step.png)|![consumption probability](figures/cumulative-profit.png)|
