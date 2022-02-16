@@ -172,6 +172,6 @@ The following is part of the results generated from running the simulation for 1
 <li>Cumulative profit</li>
 </ul>
 
-|Consumers trust over time|Total profit over time|Consumption probability over time|
+|Consumption probability|Profit per step|Cumulative profit|
 |------|-------|------|
 |![consumers trust](figures/consumption.png)|![total profit](figures/profit-per-step.png)|![consumption probability](figures/cumulative-profit.png)|
