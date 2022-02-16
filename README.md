@@ -168,6 +168,6 @@ The following is part of the results generated from running the simulation for 1
 
 
 |Consumption probability|Profit per step|
-|-----------------------|---------------|-----------------|
+|-----------------------|---------------|
 |![consumption probability](figures/consumption.png)|![profit per step](figures/profit-per-step.png)|
 
