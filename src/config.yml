@@ -1,0 +1,37 @@
+#model input
+model_input:
+  ratings_dataset: 'ratings.csv'
+  items_dataset: 'movies.csv'
+  rating_scale: [0.5,1,1.5,2,2.5,3,3.5,4,4.5,5]
+  recommendation_data_directory: "recdata"
+  data_directory: 'data'
+  dataset_directory: 'dataset'
+  results_directory: 'results'
+  execution_dir: 'exec'
+
+
+# model parameters
+model_parameters:
+  timesteps: 1000
+  number_of_runs: 3
+  quantile_consumer_expectation: [0.95]
+  recommendation_strategy: ['consumer_only','balance_equal_weights', 'profit_only','balance_unequal_weights','popular_based']
+  recommendation_length: 10
+  error: {'mu':0,'sd':0.3}
+  frequency_update_expectation: 100
+  frequency_recompute_utilities: 100
+  # Three functions could be used to compute the distance: euclidean, binary, manhattan
+  trust_update_distance: 'euclidean'
+  feedback_likelihood: 0.10
+  # social media
+  social_media_on: 0
+  observing_socialmedia_likelihood: 0.15
+  social_media_reliance: 0.1
+  numposts_threshold: 5000
+  trust_weight: 0.5
+  socia_media_weight: 0.05
+  #dropout
+  drop_out_on: 0
+  dropout_threshold: 0.8
+
+
