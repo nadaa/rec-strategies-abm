@@ -169,5 +169,5 @@ The following is part of the results generated from running the simulation for 1
 
 |Consumption probability|Cumulative profit|Profit per step|
 |-----------------------|---------------|-----------------|
-|![consumption probability](figures/consumption.png)|![cumulative profit](figures/cumulative-profit.png)|![profit per step](figures/profit-per-step.png)|
+|![consumption probability](figures/consumption.png){ width=60%,height:30px}|![cumulative profit](figures/cumulative-profit.png){ width=60%,height:30px }|![profit per step](figures/profit-per-step.png){ width=60%,height:30px}|
 
