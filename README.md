@@ -167,7 +167,16 @@ We test five different scenarios while varying recommendation strategies and fix
 The following is part of the results generated from running the simulation for 1000 time steps and three replications. The simulation comprises one service provider agent and 610 consumer agents, and consumers can share their experiences on social media.
 
 
-||||
-|-----------------------|---------------|-----------------|
-|![consumption probability](figures/consumption.png) { Consumption probability}|![cumulative profit](figures/cumulative-profit.png) { Cumulative profit }|![profit per step](figures/profit-per-step.png) { Profit per step}|
+<table>
+  <tr>
+    <td>Consumption probability</td>
+     <td>Profit per step</td>
+     <td>Cumulative profit</td>
+  </tr>
+  <tr>
+    <td><img src="figures/consumption.png"></td>
+    <td><img src="screenshots/profit-per-step.png"></td>
+    <td><img src="screenshots/cumulative-profit.png"></td>
+  </tr>
+ </table>
 
