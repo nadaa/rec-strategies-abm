@@ -175,8 +175,8 @@ The following is part of the results generated from running the simulation for 1
   </tr>
   <tr>
     <td><img src="figures/consumption.png" width=300 height=200></td>
-    <td><img src="screenshots/profit-per-step.png" width=300 height=200></td>
-    <td><img src="screenshots/cumulative-profit.png" width=300 height=200></td>
+    <td><img src="figures/profit-per-step.png" width=300 height=200></td>
+    <td><img src="figures/cumulative-profit.png" width=300 height=200></td>
   </tr>
  </table>
 
