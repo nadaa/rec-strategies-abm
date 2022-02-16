@@ -137,32 +137,15 @@ We used [Movielens dataset](https://grouplens.org/datasets/movielens/), the smal
 The dataset is used to predict consumer items utilities, and to initialize the model.
 
 ## Configuration file
-Before running the simulation, make sure you set up desired values for model parameters in the `config.yml`. The configuration file is in [yaml](https://de.wikipedia.org/wiki/YAML) format.
-The file has two sections: the first section is model_input, which contains input data to the model; the second section includes model parameters.
-The table below gives a brief description of each parameter.
+Before running the simulation, make sure you set up desired values for model parameters in the `config.yml`. The configuration file is in [yaml](https://de.wikipedia.org/wiki/YAML) format. The file includes all required parameters to set up the model.
 
-|Parameter|Description|Value|
-|------|-------|------|
-|time|Number of timesteps|1000|
-|iterations|Number of runs of each simulation setting|5|
-|expectation_threshold_quantile|Minimum expectation threshold for consumer. We use a quantile of the predicted ratings per consumer| 0.7|
-|strategy| Recommendation strategy to be used by the service provider| Five strategies will be ran by seperately Mesa BatchRunner|
-|recommendation_length|Number of items to be recommended|10|
-|error|Drawn from normal distribution, used to compute the actual consumer utility of a consumed item|mu=0,sd=0.3|
-|social_media_on|1:social media exists,0: social media does not exist| 1|
-|update_expectation_threshold|Time interval of updating the consumer expectation threshold|100|
-|trust_update_param|Parameter used to update trust after consumption, we use the distance between the actual item utility and consumer expectation threshold|"euclidean"|
-|feedback_likelihood|Probability of consumer submitting feedback to the service provider|0.1|
-|dropout_threshold|Minimum trust threshold for consumer to leave the platform. This value is multiplied by the consumer' initial trust|0.8|
 
-**Note**: The simulation may take a long time based on the predefined time and number of replications in the `config.yml`. To run a light simulation, choose smaller values for time and iterations.
+**Note**: Running the code may take a long time based on the predefined time steps and number of replications in the configuration. 
 
 
 ## Results
 Each execution of the model generates a unique folder inside the results folder. The collected data from the simulation contains various CSV files, scenarios.json, and png plots.
-The combination of sensitive parameters with different specified values are saved in the `scenarios.json` file.
 
-We test five different scenarios while varying recommendation strategies and fixing other model variables.
 
 The following is part of the results generated from running the simulation for 1000 time steps and three replications. The simulation comprises one service provider agent and 610 consumer agents, and consumers can share their experiences on social media.
 
