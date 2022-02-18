@@ -68,6 +68,10 @@ conda install -c conda-forge scikit-surprise
 ```
 ### Remote installtion 
 We provide a docker image on Docker hub, to pull the image use the following:
+
+```
+git clone https://github.com/nadaa/simulation.git
+```
 ```
 docker pull nadadocker/simulation
 ```
