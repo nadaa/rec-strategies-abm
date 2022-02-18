@@ -67,9 +67,9 @@ If you face errors in insatlling **surprise** package on Windows, run:
 conda install -c conda-forge scikit-surprise
 ```
 ### Remote installtion 
-Before building an image of the simulation code, you need to pull the docker image of Python from [here](https://hub.docker.com/_/python). Use the following code to pull the image:
+We provide a docker image on Docker hub, to pull the image use the following:
 ```
-docker pull python
+docker pull nadadocker/simulation
 ```
 On the remote machine, build docker image using the provided `Dockerfile`, change to the root directory and run:
 `docker build -t <simulation_image_name> .`
