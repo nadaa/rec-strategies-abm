@@ -30,9 +30,9 @@ Two types of agents are used in this model:
 ![model_workflow](figures/modelgeneralflow.png)
 
 ## Requirements
-We tested the code on a local machine wit Windows 10, Python>=3.7, 16GB, and core i7. 
+We tested the code on a local machine wit Windows 10, Python=3.7, 16GB, and core i7. 
 The code also was tested on a remote machine with docker, Ubuntu 20.04.2 LTS x86_64, Python docker image, 30GB, and Intel Xeon E5645 (12) @ 2.4. \
-In windows, it is recommended to install Anaconda last version, which comes with Python 3 and supports scientific packages installation.
+Fot local installation on Windows, it is recommended to install Anaconda last version, which comes with Python 3 and supports scientific packages installation.
 
 The following packages are used in our model, and they are already included in the `requirments.txt`:
 * [numpy](https://numpy.org/)
