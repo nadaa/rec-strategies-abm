@@ -71,8 +71,14 @@ We provide a docker image on Docker hub, to pull the image use the following:
 ```
 docker pull nadadocker/simulation
 ```
-On the remote machine, build docker image using the provided `Dockerfile`, change to the root directory and run:
-`docker build -t <simulation_image_name> .`
+
+```
+cd simulation
+```
+
+```
+mkdir results
+```
 
 ## Running the model
 To run the simulation locally, change directory to src, and run: \
