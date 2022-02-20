@@ -1,13 +1,16 @@
 
+windowsFonts(A=windowsFont("Times New Roman"))
+
 plot_trust = function(df,colors){
-  p = ggplot(df,aes(step,trust,col=Strategy),size=1)+
+  p = ggplot(df,aes(step,trust,col=strategy),size=1)+
     geom_line(size=1)+
-    geom_ribbon(aes(ymin=trust-error,ymax=trust+error,fill=Strategy),alpha=0.1)+
+    geom_ribbon(aes(ymin=trust-error,ymax=trust+error,fill=strategy),alpha=0.1)+
     scale_x_continuous(breaks = scales::pretty_breaks(n = 5)) +
     scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
     labs(x='Time steps',y='Trust')+
     
-    theme(legend.position = "top",
+    theme(legend.position = "none",
+          text=element_text(size=16,family="A"),
           legend.title = element_text(size=24),
           legend.text = element_text(size=20),
           axis.title = element_text(size=24),
@@ -34,10 +37,10 @@ plot_trust = function(df,colors){
 
 plot_trust_expectation = function(df,colors){
   
-  p =  ggplot(df,aes(step,trust,col=Strategy),size=1)+
+  p =  ggplot(df,aes(step,trust,col=strategy),size=1)+
     geom_line(size=1)+
     labs(x='Timesteps',y='Trust')+
-    geom_ribbon(aes(ymin=trust-error,ymax=trust+error,fill=Strategy),alpha=0.3)+
+    geom_ribbon(aes(ymin=trust-error,ymax=trust+error,fill=strategy),alpha=0.3)+
     
     scale_x_continuous(breaks = scales::pretty_breaks(n = 5)) +
     scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
@@ -68,19 +71,19 @@ plot_trust_expectation = function(df,colors){
 }
 
 compute_CI_error = function(d,t){
-  sd_data = aggregate(trust~step+Strategy,d,sd)
+  sd_data = aggregate(trust~step+strategy,d,sd)
   error = qt(0.975, df=nrow( sd_data)-1)*sd_data$trust/sqrt(nrow(sd_data))
   return(error)
 }
 
 
 aggregated_data = function(d,exp,rec_s){
-  avg_trust_data = aggregate(trust~step+Strategy,d,mean)
+  avg_trust_data = aggregate(trust~step+strategy,d,mean)
   # compute the margin error of the 95% CI
   error = compute_CI_error(d)
   avg_trust_data$error = error
   avg_trust_data$expectation = exp
-  avg_trust_data$Strategy = rec_s
+  avg_trust_data$strategy = rec_s
   return(avg_trust_data)
 }
 
