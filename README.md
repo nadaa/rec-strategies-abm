@@ -56,8 +56,8 @@ Activate the virtual environment
 ```
 conda activate myenv
 ```
-More commands on using virtual environment in Anaconda is available [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) \
-Install the required packages by running: \
+More commands on using virtual environment in Anaconda is available [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) 
+Install the required packages by running: 
 ```
 pip install -r requirements.txt
 ```
@@ -74,36 +74,35 @@ docker pull nadadocker/simulation
 ```
 
 ## Running the model
-To run the simulation locally, change directory to src, and run: \
-`python run.py` \
-OR \
-Since the simulation generates data at the end, docker volume captures the data from a directory in the running container to the host.\
-The following command runs a new container of the simulation and stores the output in the "results" directory. Before running a docker container, we should create `results`\
-directory in the host machine by executing the following commands: \
+To run the simulation locally, change directory to src, and run: 
+`python run.py` 
+OR 
+Since the simulation generates data at the end, docker volume captures the data from a directory in the running container to the host.
+The following command runs a new container of the simulation and stores the output in the "results" directory. Before running a docker container, we should create `results` directory in the host machine by executing the following commands: 
 
 
-`git clone https://github.com/nadaa/simulation.git` \
+`git clone https://github.com/nadaa/simulation.git`
 
-`cd simulation` \
+`cd simulation` 
 
-`mkdir results`\
+`mkdir results`
 
-Create a new docker container to run the simulation\
+Create a new docker container to run the simulation
 
-`docker run -dit --rm -v ${PWD}/results:/results --name <my_container> <nadadocker/simulation> `\
+`docker run -dit --rm -v ${PWD}/results:/results --name <my_container> <nadadocker/simulation> `
 
 * `container_name`: A name of the container
 * `${PWD}`: The current working directory
-* `-v ${PWD}/results:/results`: Sets up a bindmount volume that links the /results directory from inside the 'container_name' to the  directory ${PWD}/results on the host machine. Docker uses a : to split the host’s path from the container path, and the host path always comes first
+* `-v ${PWD}/results:/results`: Sets up a bindmount volume that links the `/results` directory from inside the 'container_name' to the  directory ${PWD}/results on the host machine. Docker uses a : to split the host’s path from the container path, and the host path always comes first
 * `<nadadocker/simulation>` : The docker image that is used to run the container
 
 
 ## File structure
 The simulation is built in [Mesa](https://github.com/projectmesa/mesa), an agent-based simulation framework in Python.
-```
-/
+
+
 ├── data/
-│   ├── dataset/                  <- MovieLens dataset 
+│   ├── dataset                 <- MovieLens dataset 
 │   │   ├── movies.csv
 │   │   └── ratings.csv
 │   ├── recdata/                  <- Recommendation algorithm output saved in a pickle format
@@ -135,9 +134,9 @@ The simulation is built in [Mesa](https://github.com/projectmesa/mesa), an agent
   ├── run.py                      <- Launchs the simulation
   ├── service_provider.py         <- Contains all properties and behaviors of Service provider agent
   ├── test.py
-  └── utils.py                    <- An auxiliary module for extra helpful functions
+  └── utils.py             <- An auxiliary module for extra helpful functions
 
-```
+
 ## Dataset to compute consumers items' utilities
 We used [Movielens dataset](https://grouplens.org/datasets/movielens/), the small version (1 MB), which contains movie ratings for multiple users, [more details](http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html). The following shows the content of `ratings.csv`.
 
