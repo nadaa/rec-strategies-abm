@@ -81,15 +81,23 @@ Since the simulation generates data at the end, docker volume captures the data 
 The following command runs a new container of the simulation and stores the output in the "results" directory. Before running a docker container, we should create `results` directory in the host machine by executing the following commands: 
 
 
-```git clone https://github.com/nadaa/simulation.git```
+```
+git clone https://github.com/nadaa/simulation.git
+```
 
-```cd simulation```
+```
+cd simulation
+```
 
-```mkdir results```
+```
+mkdir results
+```
 
 Create a new docker container to run the simulation
 
-```docker run -dit --rm -v ${PWD}/results:/results --name <my_container> <nadadocker/simulation>```
+```
+docker run -dit --rm -v ${PWD}/results:/results --name <my_container> <nadadocker/simulation>
+```
 
 * `container_name`: A name of the container
 * `${PWD}`: The current working directory
