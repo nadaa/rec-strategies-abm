@@ -10,11 +10,11 @@
 #----------------------------------------------------------------------------------------------------------------
 
 
-# List of packages for session
+# List of the required packages
 .packages = c("ggplot2", "cowplot", "scales")
 
 # Install CRAN packages (if not already installed)
-.inst <- .packages %in% installed.packages()
+.inst = .packages %in% installed.packages()
 if(length(.packages[!.inst]) > 0) install.packages(.packages[!.inst])
 
 # Load packages into session 
@@ -65,17 +65,17 @@ dir.create(newdir,showWarnings = FALSE)
 
 plot_figures= function(newdir,colors) {
   # trust
-  source(paste(scriptspath,"/trust.R",sep=''))
-  agents_data = read_agents_data("")
-  trust_df= process_trust(agents_data,0.75,colors)
-  trust = plot_trust(trust_df,colors)
-  
-  # consumption plot
+  # source(paste(scriptspath,"/trust.R",sep=''))
+  # agents_data = read_agents_data("")
+  # trust_df= process_trust(agents_data,0.75,colors)
+  # trust = plot_trust(trust_df,colors)
+  # 
+  #consumption plot
   source(paste(scriptspath,"/consumption.R",sep=''))
   agents_data = read_agents_data("")
   consumption_df= prepare_consumption(agents_data,0.75,colors)
   consumption = plot_consumption(consumption_df,colors)
-    
+
 
   # profit per step 
   source(paste(scriptspath,"/profit-per-step.R",sep=''))
@@ -91,10 +91,10 @@ plot_figures= function(newdir,colors) {
   # Save each plots seperately
   #---------------------------------
   
-  png(filename= file.path(newdir,"trust.png"),width=530)
-  print(trust)
-  dev.off()
-  
+  # png(filename= file.path(newdir,"trust.png"),width=530)
+  # print(trust)
+  # dev.off()
+  # 
   png(filename= file.path(newdir,"consumption.png"),width=530)
   print(consumption)
   dev.off()
@@ -118,5 +118,3 @@ plot_figures= function(newdir,colors) {
 # Figures of trust, profit per time step, and cumulative profit 
 #-------------------------------------------------------------
 plot_figures(newdir,colors)
-
-
