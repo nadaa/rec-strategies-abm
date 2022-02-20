@@ -28,7 +28,7 @@ class RecommendationModel(Model):
 
         # collecting data from the simulation
         self.datacollector = DataCollector(
-            model_reporters={"Strategy": "recommendation_strategy",
+            model_reporters={"strategy": "recommendation_strategy",
                              "model_params": get_params,
                              "step": lambda m: m.schedule.steps,
                              "total_profit": lambda m: np.round(m.total_profit, 3),
