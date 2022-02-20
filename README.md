@@ -107,8 +107,7 @@ docker run -dit --rm -v ${PWD}/results:/results --name <my_container> <nadadocke
 
 ## File structure
 The simulation is built in [Mesa](https://github.com/projectmesa/mesa), an agent-based simulation framework in Python.
-
-
+```
 ├── data/
 │   ├── dataset                 <- MovieLens dataset 
 │   │   ├── movies.csv
@@ -144,7 +143,7 @@ The simulation is built in [Mesa](https://github.com/projectmesa/mesa), an agent
   ├── test.py
   └── utils.py             <- An auxiliary module for extra helpful functions
 
-
+```
 ## Dataset to compute consumers items' utilities
 We used [Movielens dataset](https://grouplens.org/datasets/movielens/), the small version (1 MB), which contains movie ratings for multiple users, [more details](http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html). The following shows the content of `ratings.csv`.
 
