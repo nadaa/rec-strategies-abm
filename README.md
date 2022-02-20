@@ -9,7 +9,7 @@
   - [Remote installtion](#remote-installtion)
 - [Running the model](#running-the-model)
 - [File structure](#file-structure)
-- [Dataset to compute consumers items' utilities](#dataset-to-compute-consumers-items-utilities)
+- [Ratings dataset](#ratings-dataset)
 - [Configuration file](#configuration-file)
 - [Results](#results)
 
@@ -30,9 +30,9 @@ Two types of agents are used in this model:
 ![model_workflow](figures/modelgeneralflow.png)
 
 ## Requirements
-We tested the code on a local machine wit Windows 10, Python=3.7, 16GB, and core i7. 
-The code also was tested on a remote machine with docker, Ubuntu 20.04.2 LTS x86_64, Python docker image, 30GB, and Intel Xeon E5645 (12) @ 2.4. \
-Fot local installation on Windows, it is recommended to install Anaconda last version, which comes with Python 3 and supports scientific packages installation.
+We tested the code on a local machine with Ms Windows 10, Python=3.7, 16GB, and Intel Core 7. 
+The code also was tested on a remote machine with Docker, Ubuntu 20.04.2 LTS x86_64, Python Docker image, 30GB, and Intel Xeon E5645 (12) @ 2.4. \
+For local installation on Windows, it is recommended to install l the last version of Anaconda, which comes with Python 3 and supports scientific packages.
 
 The following packages are used in our model, and they are already included in the `requirments.txt`:
 * [numpy](https://numpy.org/)
@@ -44,9 +44,9 @@ The following packages are used in our model, and they are already included in t
 * [pyyaml](https://pyyaml.org/)
 
 ## Installation
-The installation is possible on a local or remote machine. We assume the remote machine has a docker installed. If not docker, you can follow the instructions of local installation.
+The installation is possible on a local or remote machine. We assume the remote machine has a Docker installed. If not Docker, you can follow the instructions of local installation.
 ### Local installation
-Download and install [AnaConda](https://www.anaconda.com/products/individual-d) (Indevedual Edition)
+Download and install [Anaconda](https://www.anaconda.com/products/individual-d) (Individual Edition)
 
 Create a virtual environment
 ```
@@ -57,17 +57,18 @@ Activate the virtual environment
 conda activate myenv
 ```
 More commands on using virtual environment in Anaconda is available [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) 
+
 Install the required packages by running: 
 ```
 pip install -r requirements.txt
 ```
 
-If you face errors in insatlling **surprise** package on Windows, run:
+If you face errors in insatlling the **surprise** package on MS Windows, run:
 ```
 conda install -c conda-forge scikit-surprise
 ```
 ### Remote installtion 
-We provide a docker image on Docker hub, to pull the image use the following:
+We provide a Docker image on Docker hub, to pull the image use the following:
 
 ```
 docker pull nadadocker/simulation
@@ -77,8 +78,8 @@ docker pull nadadocker/simulation
 To run the simulation locally, change directory to src, and run: 
 ```python run.py```
 OR 
-Since the simulation generates data at the end, docker volume captures the data from a directory in the running container to the host.
-The following command runs a new container of the simulation and stores the output in the "results" directory. Before running a docker container, we should create `results` directory in the host machine by executing the following commands: 
+Since the simulation generates data at the end, Docker volume captures the data from a directory in the running container to the host.
+The following command runs a new container of the simulation and saves the output in the "results" directory. Before running a Docker container, we should create `results` directory in the host machine by executing the following commands: 
 
 
 ```
@@ -93,7 +94,7 @@ cd simulation
 mkdir results
 ```
 
-Create a new docker container to run the simulation
+Create a new Docker container to run the simulation
 
 ```
 docker run -dit --rm -v ${PWD}/results:/results --name <my_container> <nadadocker/simulation>
@@ -102,7 +103,7 @@ docker run -dit --rm -v ${PWD}/results:/results --name <my_container> <nadadocke
 * `container_name`: A name of the container
 * `${PWD}`: The current working directory
 * `-v ${PWD}/results:/results`: Sets up a bindmount volume that links the `/results` directory from inside the 'container_name' to the  directory ${PWD}/results on the host machine. Docker uses a : to split the host’s path from the container path, and the host path always comes first
-* `<nadadocker/simulation>` : The docker image that is used to run the container
+* `<nadadocker/simulation>` : The Docker image that is used to run the container
 
 
 ## File structure
@@ -144,8 +145,8 @@ The simulation is built in [Mesa](https://github.com/projectmesa/mesa), an agent
   └── utils.py             <- An auxiliary module for extra helpful functions
 
 ```
-## Dataset to compute consumers items' utilities
-We used [Movielens dataset](https://grouplens.org/datasets/movielens/), the small version (1 MB), which contains movie ratings for multiple users, [more details](http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html). The following shows the content of `ratings.csv`.
+## Ratings dataset
+We use the [Movielens dataset](https://grouplens.org/datasets/movielens/), the small version (1 MB), which contains movie ratings for multiple consumers, [more details](http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html). The following shows the content of `ratings.csv`.
 
 
 |userId|movieId|rating|timestamp|
@@ -159,17 +160,17 @@ We used [Movielens dataset](https://grouplens.org/datasets/movielens/), the smal
 The dataset is used to predict consumer items utilities, and to initialize the model.
 
 ## Configuration file
-Before running the simulation, make sure you set up desired values for model parameters in the `config.yml`. The configuration file is in [yaml](https://de.wikipedia.org/wiki/YAML) format. The file includes all required parameters to set up the model.
+`config.yml` includes all the required parameters to set up the model.
 
 
-**Note**: Running the code may take a long time based on the predefined time steps and number of replications in the configuration. 
+**Note**: Running the code may take a long time based on the predefined time steps and the number of replications in the configuration. 
 
 
 ## Results
 Each execution of the model generates a unique folder inside the results folder. The collected data from the simulation contains various CSV files, scenarios.json, and png plots.
 
 
-The following is part of the results generated from running the simulation for 1000 time steps and three replications. The simulation comprises one service provider agent and 610 consumer agents, and consumers can share their experiences on social media.
+The following is part of the results generated from running the simulation for 1000 time steps and 3 replications. The simulation comprises one service provider and 610 consumers, and consumers can share their experiences on social media.
 
 
 <table>
