@@ -1,12 +1,16 @@
+windowsFonts(A=windowsFont("Times New Roman"))
+
 plot_consumption = function(df,colors){
-  p = ggplot(df,aes(step,consumption_probability,col=Strategy),size=1)+
+  p = ggplot(df,aes(step,consumption_probability,col=strategy),size=1)+
     geom_line(size=1)+
-    geom_ribbon(aes(ymin=consumption_probability-error,ymax=consumption_probability+error,fill=Strategy),alpha=0.1)+
+    geom_ribbon(aes(ymin=consumption_probability-error,ymax=consumption_probability+error,fill=strategy),alpha=0.1)+
     scale_x_continuous(breaks = scales::pretty_breaks(n = 5)) +
-    scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
+    scale_y_continuous(limits = c(0.2,1), breaks = seq(0.2,1, by=0.1)) +
+    
     labs(x='Time steps',y='Consumption probability')+
     
-    theme(legend.position = "top",
+    theme(legend.position = "none",
+          text=element_text(family="A"),
           legend.title = element_text(size=24),
           legend.text = element_text(size=20),
           axis.title = element_text(size=24),
@@ -35,19 +39,19 @@ plot_consumption = function(df,colors){
 
           
 aggregated_data = function(d,socr,rec_str){
-  avg_consumption_probability_data = aggregate(consumption_probability~step+Strategy,d,mean)
+  avg_consumption_probability_data = aggregate(consumption_probability~step+strategy,d,mean)
   # compute the margin error of the 95% CI
   error = compute_CI_error(d)
   avg_consumption_probability_data$error = error
   avg_consumption_probability_data$reliance = socr
-  avg_consumption_probability_data$Strategy = rec_str
+  avg_consumption_probability_data$strategy = rec_str
   return(avg_consumption_probability_data)
 }
 
      
 
 compute_CI_error = function(d,t){
-  sd_data = aggregate(consumption_probability~step+Strategy,d,sd)
+  sd_data = aggregate(consumption_probability~step+strategy,d,sd)
   error = qt(0.975, df=nrow( sd_data)-1)*sd_data$consumption_probability/sqrt(nrow(sd_data))
   return(error)
 }
