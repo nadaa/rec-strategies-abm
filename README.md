@@ -146,7 +146,7 @@ The simulation is built in [Mesa](https://github.com/projectmesa/mesa), an agent
 
 ```
 ## Ratings dataset
-We use the [Movielens dataset](https://grouplens.org/datasets/movielens/), the small version (1 MB), which contains movie ratings for multiple consumers, [more details](http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html). The following shows the content of `ratings.csv`.
+We use the [MovieLens dataset](https://grouplens.org/datasets/movielens/), the small version (1 MB), which contains movie ratings for multiple consumers, [more details](http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html). The following shows the content of `ratings.csv`.
 
 
 |userId|movieId|rating|timestamp|
