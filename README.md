@@ -24,8 +24,8 @@ Two types of agents are used in the model:
 <li> Consumer: Receive the recommendations and make further decisions </li>
 </ul>
 
-## General model workflow
-![model_workflow](figures/modelgeneralflow.png)*Based on Experience goods*
+## General model workflow based on [Experience goods](https://link.springer.com/chapter/10.1007/978-3-8350-9580-9_1)
+![model_workflow](figures/modelgeneralflow.png)
 
 ## Requirements
 We tested the code on a machine with MS Windows 10, Python=3.8, 16GB, and an Intel Core 7 CPU.  The code also was tested using a machine with Docker, Ubuntu 20.04.2 LTS x86_64, , 30GB, and an Intel Xeon E5645 (12) @ 2.4. processor. \
