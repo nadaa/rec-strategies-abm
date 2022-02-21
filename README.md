@@ -28,7 +28,7 @@ Two types of agents are used in the model:
 ![model_workflow](figures/modelgeneralflow.png)
 
 ## Requirements
-We tested the code on a local machine with MS Windows 10, Python=3.7, 16GB, and an Intel Core 7 CPU.  The code also was tested on a remote machine with Docker, Ubuntu 20.04.2 LTS x86_64, a Python Docker image, 30GB, and an Intel Xeon E5645 (12) @ 2.4. processor. \
+We tested the code on a local machine with MS Windows 10, Python=3.8, 16GB, and an Intel Core 7 CPU.  The code also was tested on a remote machine with Docker, Ubuntu 20.04.2 LTS x86_64, a Python Docker image, 30GB, and an Intel Xeon E5645 (12) @ 2.4. processor. \
 For local installation on Windows, it is recommended to install the last version of Anaconda, which comes with Python 3 and supports scientific packages.
 
 The following packages are used in our model, see also the file `requirments.txt`:
@@ -43,12 +43,12 @@ The following packages are used in our model, see also the file `requirments.txt
 ## Installation
 The installation is possible on a local environment or on a local or remote machine with Docker. For the latter case, we assume the computer has Docker installed. 
 
-### Local installation
+### Setting up the environment (No Docker)
 Download and install [Anaconda](https://www.anaconda.com/products/individual-d) (Individual Edition)
 
 Create a virtual environment
 ```
-conda create -n myenv python=3.6
+conda create -n myenv python=3.8
 ```
 Activate the virtual environment 
 ```
@@ -65,7 +65,7 @@ If you face errors when insatlling the **surprise** package on MS Windows, run:
 ```
 conda install -c conda-forge scikit-surprise
 ```
-### Remote installtion 
+### Setting up the environment (Using Docker)
 We provide a Docker image on Docker hub; to pull the image use the following:
 
 ```
