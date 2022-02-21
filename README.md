@@ -25,7 +25,7 @@ Two types of agents are used in the model:
 </ul>
 
 ## General model workflow
-![model_workflow](figures/modelgeneralflow.png)
+![model_workflow](figures/modelgeneralflow.png)*Based on Experience goods*
 
 ## Requirements
 We tested the code on a machine with MS Windows 10, Python=3.8, 16GB, and an Intel Core 7 CPU.  The code also was tested using a machine with Docker, Ubuntu 20.04.2 LTS x86_64, , 30GB, and an Intel Xeon E5645 (12) @ 2.4. processor. \
