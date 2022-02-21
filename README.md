@@ -165,7 +165,7 @@ The dataset is used to predict consumer items utilities, and to initialize the m
 
 
 ## Results
-Each execution of the model generates a unique folder inside the results folder. The collected data from the simulation contains various CSV files, a file named scenarios.json, and plots in the PNG format.
+Each execution of the model generates a unique folder inside the results folder. The collected data from the simulation contains various CSV files, a summary of the simulated strategies in a file named scenarios.json, and plots in the PNG format.
 
 
 The following is part of the results generated from running the simulation for 1000 time steps and 3 replications. The simulation comprises one service provider and 610 consumers, and consumers can share their experiences on social media.
