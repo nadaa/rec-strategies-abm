@@ -29,7 +29,7 @@ Two types of agents are used in the model:
 
 ## Requirements
 We tested the code on a machine with MS Windows 10, Python=3.8, 16GB, and an Intel Core 7 CPU.  The code also was tested using a machine with Docker, Ubuntu 20.04.2 LTS x86_64, , 30GB, and an Intel Xeon E5645 (12) @ 2.4. processor. \
-For local installation on Windows, it is recommended to install the last version of Anaconda, which comes with Python 3 and supports scientific packages.
+For installation without Docker, it is recommended to install the last version of Anaconda, which comes with Python 3 and supports scientific packages.
 
 The following packages are used in our model, see also the file `requirements.txt`:
 * [numpy](https://numpy.org/)
@@ -41,7 +41,6 @@ The following packages are used in our model, see also the file `requirements.tx
 * [pyyaml](https://pyyaml.org/)
 
 ## Installation
-The installation is possible on a local environment or on a local or remote machine with Docker. For the latter case, we assume the computer has Docker installed. 
 
 ### Setting up the environment (No Docker)
 Download and install [Anaconda](https://www.anaconda.com/products/individual-d) (Individual Edition)
@@ -73,12 +72,16 @@ docker pull nadadocker/simulation
 ```
 
 ## Running the model
-To run the simulation in a local environment, change directory to src, and run: 
+To run the simulation when Docker does not exist: 
+
+```
+cd src
+```
+
 ```python run.py```
 
 When using Docker:
 Since the simulation saves data to the disk at the end, an output directory has to be provided to the Docker image. The following command runs a new container of the simulation and saves the output in the "results" directory. Before running the Docker container, create a directory named `results` on the host machine by executing the following commands: 
-
 
 ```
 git clone https://github.com/nadaa/simulation.git
