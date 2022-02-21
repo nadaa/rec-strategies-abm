@@ -1,6 +1,7 @@
+Online material for the paper "Balancing Consumer and Business Value of Recommender Systems: A Simulation-based Analysis"
+
 ## Table of content
 
-- [Table of content](#table-of-content)
 - [Summary](#summary)
 - [General model workflow](#general-model-workflow)
 - [Requirements](#requirements)
@@ -10,6 +11,7 @@
 - [Rating dataset](#ratings-dataset)
 - [Configuration file](#configuration-file)
 - [Results](#results)
+
 
 
 ## Summary
