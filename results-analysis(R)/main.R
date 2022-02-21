@@ -5,7 +5,7 @@
 # All required packages will be installed automatically
 # A new popup window will as you to select the data directory
 # Highlight the code to run
-# When completing the execution, a new directory named as "Figures" is generated in the same directory of the data.
+# When completing the execution, a new directory named as "Figures" is created in the same directory of the data.
 
 #----------------------------------------------------------------------------------------------------------------
 
