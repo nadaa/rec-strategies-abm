@@ -84,7 +84,7 @@ When using Docker:
 Since the simulation saves data to the disk at the end, an output directory has to be provided to the Docker image. The following command runs a new container of the simulation and saves the output in the "results" directory. Before running the Docker container, create a directory named `results` on the host machine by executing the following commands: 
 
 ```
-git clone https://github.com/nadaa/simulation.git
+git clone <git_repo>
 ```
 
 ```
