@@ -5,11 +5,9 @@
 - [General model workflow](#general-model-workflow)
 - [Requirements](#requirements)
 - [Installation](#installation)
-  - [Local installation](#local-installation)
-  - [Remote installtion](#remote-installtion)
 - [Running the model](#running-the-model)
 - [File structure](#file-structure)
-- [Ratings dataset](#ratings-dataset)
+- [Rating dataset](#ratings-dataset)
 - [Configuration file](#configuration-file)
 - [Results](#results)
 
