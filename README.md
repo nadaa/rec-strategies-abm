@@ -128,7 +128,7 @@ The simulation is built with the help of [Mesa](https://github.com/projectmesa/m
 │   └── time-trust.png
 ├── README.md
 ├── requirements.txt
-├── results/                      <- Store simulation results
+├── results-analysis(R)/                      <- R code to analyze model output, the output is stored in "results" folder, we store it in a seafile service
 ├── src/
   ├── __init__.py
   ├── config.yml                  <- Simulation settings
